@@ -11,6 +11,15 @@ const config: Config = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        primary: {
+          violet: "#42426e",
+          muted: "#8d8d8d",
+          "muted-foreground": "#3d3d3d",
+          blue: "#5900e9",
+        },
+        muted: {
+          blue: "#2f0085",
+        },
       },
     },
   },
