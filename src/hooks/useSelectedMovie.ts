@@ -12,9 +12,5 @@ export const useUpdateSession = () => {
     } else {
       sessionStorage.removeItem("movieId");
     }
-
-    return () => {
-      sessionStorage.removeItem("movieId");
-    };
   }, [movie]);
 };
