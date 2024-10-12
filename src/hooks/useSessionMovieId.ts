@@ -1,9 +1,11 @@
 import { getSelectedMovieSessionId } from "@/lib/utils";
 import { useState } from "react";
 import { useIsomorphicLayoutEffect } from "./useIsomorphicLayoutEffect";
+import { useMovieStore } from "@/store/useMovieStore";
 
 export const useSessionMovieId = () => {
   const [movieId, setMovieId] = useState<string | null>(null);
+  const { movie } = useMovieStore();
 
   useIsomorphicLayoutEffect(() => {
     const movieSessionId = getSelectedMovieSessionId();
@@ -14,7 +16,7 @@ export const useSessionMovieId = () => {
     return () => {
       setMovieId(null);
     };
-  }, []);
+  }, [getSelectedMovieSessionId, movie]);
 
   return movieId;
 };

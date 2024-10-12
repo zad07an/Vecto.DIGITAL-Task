@@ -3,7 +3,7 @@ import { useMovieStore } from "@/store/useMovieStore";
 import { useIsomorphicLayoutEffect } from "./useIsomorphicLayoutEffect";
 
 export const useUpdateSession = () => {
-  const { onSelectMovie, movieId } = useMovieStore();
+  const { onSelectMovie, movie } = useMovieStore();
 
   useIsomorphicLayoutEffect(() => {
     const selectedSessionMovieId = getSelectedMovieSessionId();
@@ -12,5 +12,9 @@ export const useUpdateSession = () => {
     } else {
       sessionStorage.removeItem("movieId");
     }
-  }, [movieId]);
+
+    return () => {
+      sessionStorage.removeItem("movieId");
+    };
+  }, [movie]);
 };
