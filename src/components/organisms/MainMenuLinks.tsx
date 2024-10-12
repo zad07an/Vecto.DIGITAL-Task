@@ -12,7 +12,7 @@ export const MainMenuLinks = () => {
         <ActiveLink
           key={item.name}
           href={item.href}
-          className=" w-fit group-hover:w-full flex items-center justify-start gap-6 group-hover:pr-6 group-hover:rounded-xl rounded-full"
+          className=" w-fit group-hover:w-full whitespace-nowrap flex items-center justify-start gap-6 group-hover:pr-6 group-hover:rounded-xl rounded-full"
         >
           <div className=" size-16 flex items-center justify-center">
             <Image

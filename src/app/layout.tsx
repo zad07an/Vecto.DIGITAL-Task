@@ -18,7 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.variable} antialiased`}>
-        <main className="w-full h-dvh flex">
+        <main className="w-full max-w-[1920px] mx-auto h-dvh flex relative">
           <MainMenu />
           {children}
         </main>
